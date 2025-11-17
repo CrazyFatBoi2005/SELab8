@@ -1,5 +1,6 @@
-package com.uni.lab7.item;
+package com.uni.lab7.dto;
 
+import com.uni.lab7.entities.Item;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,6 +16,7 @@ public class ItemDto {
     private String description;
     private String imageUrl;
     private Double price;
+    private Long categoryId;
 
     public static ItemDto toDto(Item item) {
         return ItemDto.builder()

@@ -1,5 +1,7 @@
-package com.uni.lab7.item;
+package com.uni.lab7.controllers;
 
+import com.uni.lab7.dto.ItemDto;
+import com.uni.lab7.services.ItemService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
