@@ -1,5 +1,6 @@
 package com.uni.lab7.controllers;
 
+import com.uni.lab7.dto.ItemDto;
 import com.uni.lab7.dto.UserDto;
 import com.uni.lab7.entities.Item;
 import com.uni.lab7.services.FavoriteService;
@@ -42,7 +43,7 @@ public class UserController {
     }
 
     @GetMapping("/{id}/favorites")
-    public List<Item> getFavoritesById(@PathVariable Long id) {
+    public List<ItemDto> getFavoritesById(@PathVariable Long id) {
         return favoriteService.getFavoriteItems(id);
     }
 }
