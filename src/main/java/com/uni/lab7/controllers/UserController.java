@@ -1,6 +1,8 @@
 package com.uni.lab7.controllers;
 
 import com.uni.lab7.dto.UserDto;
+import com.uni.lab7.entities.Item;
+import com.uni.lab7.services.FavoriteService;
 import com.uni.lab7.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +14,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserController {
     private final UserService userService;
+    private final FavoriteService favoriteService;
 
     @GetMapping("/")
     public List<UserDto> findAll() {
@@ -36,5 +39,10 @@ public class UserController {
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
         userService.deleteById(id);
+    }
+
+    @GetMapping("/{id}/favorites")
+    public List<Item> getFavoritesById(@PathVariable Long id) {
+        return favoriteService.getFavoriteItems(id);
     }
 }
